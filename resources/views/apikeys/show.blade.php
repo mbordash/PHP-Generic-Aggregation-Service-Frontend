@@ -20,7 +20,7 @@
 	
 	<dl class="dl-horizontal">
 		<dt>Created On</dt>
-		<dd>{{ $testvar }}</dd>
+		<dd></dd>
 	</dl>
 	
 	<p>

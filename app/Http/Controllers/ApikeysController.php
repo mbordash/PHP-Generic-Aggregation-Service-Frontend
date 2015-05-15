@@ -5,8 +5,15 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Input;
+use Redirect;
 
 class ApikeysController extends Controller {
+
+    protected $rules = [
+        'app_name' => ['required', 'min:3'],
+        'slug' => ['required', 'unique:apikeys', 'alpha_num'],
+    ];
 
 	/**
 	 * Display a listing of the resource.
@@ -34,10 +41,17 @@ class ApikeysController extends Controller {
 	 * Store a newly created resource in storage.
 	 *
 	 * @return Response
+     * @param \Illuminate\Http\Request $request
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+        $this->validate($request, $this->rules);
+
+        $input = Input::all();
+        Apikey::create( $input );
+
+        return Redirect::route('apikeys.index')->with('message', 'API Key created');
+
 	}
 
 	/**
@@ -50,7 +64,7 @@ class ApikeysController extends Controller {
 	{
 		//
 		//$apikey->created_at = $apikey->created_at->date;
-		$testvar = "michael";
+
 		return view('apikeys.show', compact('apikey'));
 	}
 
@@ -71,11 +85,16 @@ class ApikeysController extends Controller {
 	 *
 	 * @param  int  $id
 	 * @return Response
+     * @param \Illuminate\Http\Request $request
 	 */
-	public function update(Apikey $apikey)
+	public function update(Apikey $apikey, Request $request)
 	{
-		//
-		return view('apikeys.update', compact('apikey'));
+        $this->validate($request, $this->rules);
+
+        $input = array_except(Input::all(), '_method');
+        $apikey->update($input);
+
+        return Redirect::route('apikeys.show', $apikey->slug)->with('message', 'API Key updated.');
 		
 	}
 
@@ -87,7 +106,9 @@ class ApikeysController extends Controller {
 	 */
 	public function destroy(Apikey $apikey)
 	{
-		//
+        $apikey->delete();
+
+        return Redirect::route('apikeys.index')->with('message', 'API Key deleted.');
 	}
 
 }
