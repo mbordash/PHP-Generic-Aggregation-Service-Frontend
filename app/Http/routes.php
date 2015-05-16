@@ -11,20 +11,22 @@
 |
 */
 
+use App\Apikey;
+
 Route::model('apikeys', 'Apikey');
 
 Route::bind('apikeys', function($value, $route) {
-	return App\ApiKey::whereSlug($value)->first();
+	return Apikey::whereSlug($value)->where('users_id', '=', Auth::user()->id)->where('approved', '=', true)->whereNull('deleted_at')->first();
 });
 
-
 Route::resource('apikeys', 'ApikeysController');
-
 
 
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
+
+Route::get('aggregation', 'AggregationController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

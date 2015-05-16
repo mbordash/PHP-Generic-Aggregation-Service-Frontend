@@ -1,7 +1,7 @@
 <html>
 	<head>
-		<title>Laravel</title>
-		
+		<title>Upsert.io</title>
+        <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 		<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
 
 		<style>
@@ -34,15 +34,20 @@
 
 			.quote {
 				font-size: 24px;
+                margin-bottom: 10px;
 			}
 		</style>
 	</head>
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title">Laravel 5</div>
-				<div class="quote">{{ Inspiring::quote() }}</div>
-			</div>
+				<div class="title">Upsert.io</div>
+				<div class="quote">A microservices company.  Let's start with...</div>
+		        <div class="quote">
+                    <a class="btn btn-default btn-lg btn-block" href="aggregation">Aggregation</a>
+                </div>
+            </div>
 		</div>
+
 	</body>
 </html>
