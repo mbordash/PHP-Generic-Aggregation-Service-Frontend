@@ -34,7 +34,7 @@
 
         <h5>For example (curl)</h5>
         <code>
-            curl --header "authorization: Bearer {YOUR_SECURE_TOKEN}" --include --request PUT "http://api.upstream.io/event/inc/listens/caravan"
+            curl --header "authorization: Bearer {YOUR_SECURE_TOKEN}" --include --request PUT "http://api.upsert.io/event/inc/listens/caravan"
         </code>
     </div>
 
@@ -42,7 +42,7 @@
 
     <h3>Increment/Decrement Metric</h3>
     <div class="bs-callout bs-callout-default">
-        <h4><span class="label label-warning">PUT</span> http://api.upstream.io/event/{type}/{scope}/{key}</h4>
+        <h4><span class="label label-warning">PUT</span> http://api.upsert.io/event/{type}/{scope}/{key}</h4>
         This API method is helpful for keeping track of metric counts in real-time.
     </div>
 
@@ -86,7 +86,7 @@
 
     <h3>Set Metric</h3>
     <div class="bs-callout bs-callout-default">
-        <h4><span class="label label-warning">PUT</span> http://api.upstream.io/event/set/{scope}/{key}/{val}/{date}</h4>
+        <h4><span class="label label-warning">PUT</span> http://api.upsert.io/event/set/{scope}/{key}/{val}/{date}</h4>
         This API method is helpful for loading counts for keys for past days or for storing counts as a result of a pivot.
     </div>
 
@@ -137,7 +137,7 @@
 
     <h3>Get Count</h3>
     <div class="bs-callout bs-callout-default">
-        <h4><span class="label label-success">GET</span> http://api.upstream.io/event/count/scope/{start}/{end}/{key}</h4>
+        <h4><span class="label label-success">GET</span> http://api.upsert.io/event/count/scope/{start}/{end}/{key}</h4>
         This API method is helpful for getting counts for your scope and optionally your key and optionally within a date range.
     </div>
 
@@ -191,7 +191,7 @@
 
     <h3>Query Key Counts</h3>
     <div class="bs-callout bs-callout-default">
-        <h4><span class="label label-success">GET</span> http://api.upstream.io/event/query/operator/operand</h4>
+        <h4><span class="label label-success">GET</span> http://api.upsert.io/event/query/operator/operand</h4>
         This API method is helpful for performing query operations. For example: "get a list of all keys where the count value is greater than 1000".
     </div>
 
