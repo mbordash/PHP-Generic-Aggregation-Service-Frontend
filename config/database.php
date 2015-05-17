@@ -87,8 +87,8 @@ return [
     			'driver'   => 'mongodb',
     			'host'     => 'localhost',
     			'port'     => 27017,
-    			'username' => 'dev_user',
-    			'password' => '55knives',
+    			'username' => 'www_user',
+    			'password' => '19283747181289',
     			'database' => 'upsert',
     			'options' => [
         			'db' => 'admin' // sets the authentication database required by mongo 3
