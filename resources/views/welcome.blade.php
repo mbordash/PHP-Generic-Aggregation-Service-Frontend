@@ -42,9 +42,12 @@
 		<div class="container">
 			<div class="content">
 				<div class="title">Upsert.io</div>
-				<div class="quote">A microservices company.  Let's start with...</div>
+				<div class="quote">A microservices fortress.  Let's start with...</div>
 		        <div class="quote">
                     <a class="btn btn-default btn-lg btn-block" href="aggregation">Aggregation</a>
+                </div>
+                <div class="quote">
+                    Be sure to <a href="{{ url('/auth/register') }}">Register for Updates</a>
                 </div>
             </div>
 		</div>

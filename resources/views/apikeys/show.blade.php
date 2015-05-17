@@ -3,7 +3,7 @@
 @section('content')
 
 
-            <h2>API Key Details</h2>
+            <h2>App Details</h2>
 
             @if ( !$apikey->slug )
                 This is not a valid URL.
@@ -12,7 +12,7 @@
                 <h2>{{ $apikey->app_name }}</h2>
 
                 <dl class="dl-horizontal">
-                    <dt>API Key</dt>
+                    <dt>API Token</dt>
                     <dd>{{ $apikey->api_key }}</dd>
                 </dl>
 

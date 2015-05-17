@@ -2,6 +2,11 @@
 
 @section('content')
 
+            <h1>Register</h1>
+
+            <p>Sign up to create your API Keys and/or to receive email updates. We are constantly working on enhancements &
+                new services. We'll let you know when there's news.</p>
+
 			<div class="panel panel-default">
 				<div class="panel-heading">Register</div>
 				<div class="panel-body">
