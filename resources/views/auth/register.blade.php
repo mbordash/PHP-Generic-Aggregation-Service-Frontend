@@ -1,9 +1,12 @@
 @extends('app')
 
 @section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+
+            <h1>Register</h1>
+
+            <p>Sign up to create your API Keys and/or to receive email updates. We are constantly working on enhancements &
+                new services. We'll let you know when there's news.</p>
+
 			<div class="panel panel-default">
 				<div class="panel-heading">Register</div>
 				<div class="panel-body">
@@ -59,7 +62,5 @@
 					</form>
 				</div>
 			</div>
-		</div>
-	</div>
-</div>
+
 @endsection
