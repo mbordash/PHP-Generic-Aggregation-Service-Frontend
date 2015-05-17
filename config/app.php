@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url' => 'http://www-upsert:8080',
+	'url' => 'http://www.upsert.io',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
 	|
 	*/
 
-	'key' => env('APP_KEY', 'SomeRandomString'),
+	'key' => env('APP_KEY', 'Ld3NReoULaXniFb57DWwbMq8EvKQMdDw'),
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
