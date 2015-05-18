@@ -28,6 +28,12 @@ Route::get('home', 'HomeController@index');
 
 Route::get('aggregation', 'AggregationController@index');
 
+Route::get('contact',
+    ['as' => 'contact', 'uses' => 'AboutController@create']);
+
+Route::post('contact',
+    ['as' => 'contact_store', 'uses' => 'AboutController@store']);
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
