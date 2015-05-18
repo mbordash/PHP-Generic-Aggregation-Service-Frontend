@@ -37,6 +37,7 @@
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/aggregation') }}">Aggregation</a></li>
                     <li><a href="{{ url('/apikeys') }}">Manage Apps</a></li>
+                    <li><a href="{{ url('/contact') }}">Contact</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
