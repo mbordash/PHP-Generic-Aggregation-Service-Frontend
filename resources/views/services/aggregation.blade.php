@@ -42,7 +42,7 @@
 
     <h3>Increment/Decrement Metric</h3>
     <div class="bs-callout bs-callout-default">
-        <h4><span class="label label-warning">PUT</span> http://api.upsert.io/event/{type}/{scope}/{key}</h4>
+        <h4><span class="label label-warning">PUT</span> http://api.upsert.io/event/{action}/{scope}/{key}</h4>
         This API method is helpful for keeping track of metric counts in real-time.
     </div>
 
@@ -58,7 +58,7 @@
         </thead>
         <tbody>
             <tr>
-                <th>type</th>
+                <th>action</th>
                 <td>Yes</td>
                 <td>enum string</td>
                 <td>Either "inc" for increment or "dec" for decrement.
@@ -191,12 +191,38 @@
 
     <h3>Query Key Counts</h3>
     <div class="bs-callout bs-callout-default">
-        <h4><span class="label label-success">GET</span> http://api.upsert.io/event/query/operator/operand</h4>
-        This API method is helpful for performing query operations. For example: "get a list of all keys where the count value is greater than 1000".
+        <h4><span class="label label-success">GET</span> http://api.upsert.io/event/query/{operator}/{operand}</h4>
+        This API method is helpful for performing query operations. Initially supports retrieval of keys by day matching your operator.
+        For example: "get a list of all keys by day where the count value is greater than 1000".
     </div>
 
     <h4>Parameters</h4>
-    Coming Soon!
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Required?</th>
+                <th>Type</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>operator</th>
+                <td>Yes</td>
+                <td>enum string</td>
+                <td>One of the following operators: "lt" (less than), "lte" (less than or equal to), "gt" (greater than), "gte" (greater than or equal to)
+                </td>
+            </tr>
+            <tr>
+                <th>operand</th>
+                <td>Yes</td>
+                <td>Integers</td>
+                <td>The count as an integer you'd like to use for your query.</td>
+            </tr>
+
+        </tbody>
+    </table>
 
 
 @endsection
