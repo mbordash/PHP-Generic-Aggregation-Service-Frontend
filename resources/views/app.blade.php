@@ -21,7 +21,7 @@
 	<![endif]-->
 </head>
 <body>
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -58,9 +58,12 @@
 		</div>
 	</nav>
 
+
+
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+
+            @yield('sidenav', '<div class="col-md-8 col-md-offset-2">')
 
                 @if (Session::has('message'))
                     <div class="flash alert-info">
@@ -82,8 +85,9 @@
     </div>
 
 	<!-- Scripts -->
-    <script src="{{ asset('/js/app.js') }}"></script>
+
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="{{ asset('/js/app.js') }}"></script>
 </body>
 </html>

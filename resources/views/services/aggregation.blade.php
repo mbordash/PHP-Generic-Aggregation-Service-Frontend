@@ -1,8 +1,33 @@
 @extends('app')
 
+@section('sidenav')
+
+    <nav class="col-xs-2 bs-docs-sidebar">
+        <ul class="nav nav-stacked fixed" id="sidebar">
+            <li>
+                <a href="#about">About the Service</a>
+            </li>
+            <li>
+                <a href="#docs">API Documentation</a>
+                <ul class="nav nav-stacked">
+                    <li><a href="#docsSecurity">Secure Requests</a></li>
+                    <li><a href="#docsIncDecMetric">Increment/Decrement Metric</a></li>
+                    <li><a href="#docsSetMetric">Set Metric</a></li>
+                    <li><a href="#docsGetMetric">Get Metric</a></li>
+                    <li><a href="#docsQuery">Query Counts</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="col-xs-10">
+
+@endsection
+
+
 @section('content')
 
-    <h1>Aggregation in the Cloud <small><span class="label label-default">BETA</span></small></h1>
+    <h1 id="about">Aggregation in the Cloud <small><span class="label label-default">BETA</span></small></h1>
 
     <div class="panel panel-default">
 
@@ -10,8 +35,8 @@
 
         <div class="panel-body">
             <p>
-                Most every project needs aggregation, whether counting events for real-time reporting or storing summary results based on a pivot.
-                Our aggregation service was created with these use cases in mind.
+                Most every project needs aggregation, whether counting events for real-time reporting, or tracking events from internet of things devices,
+                or storing summary results based on a pivot. Our aggregation service was created with these use cases in mind.
             </p>
             <p>
                 Free users may create up to 5 API keys, are limited to 5000 requests per day per key, with precision to the day.
@@ -25,9 +50,9 @@
         </div>
     </div>
 
-    <h2>API Documentation</h2>
+    <h2 id="docs">API Documentation</h2>
 
-    <h3>API Security</h3>
+    <h3 id="docsSecurity">API Security</h3>
     <div class="bs-callout bs-callout-default">
         <h4>Bearer Tokens</h4>
         Include your token within the API request header. <a href="{{ url('/apikeys') }}">Get your API Token</a>.
@@ -40,7 +65,7 @@
 
 
 
-    <h3>Increment/Decrement Metric</h3>
+    <h3 id="docsIncDecMetric">Increment/Decrement Metric</h3>
     <div class="bs-callout bs-callout-default">
         <h4><span class="label label-warning">PUT</span> http://api.upsert.io/event/{action}/{scope}/{key}</h4>
         This API method is helpful for keeping track of metric counts in real-time.
@@ -84,7 +109,7 @@
         </tbody>
     </table>
 
-    <h3>Set Metric</h3>
+    <h3 id="docsSetMetric">Set Metric</h3>
     <div class="bs-callout bs-callout-default">
         <h4><span class="label label-warning">PUT</span> http://api.upsert.io/event/set/{scope}/{key}/{val}/{date}</h4>
         This API method is helpful for loading counts for keys for past days or for storing counts as a result of a pivot.
@@ -135,7 +160,7 @@
         </tbody>
     </table>
 
-    <h3>Get Count</h3>
+    <h3 id="docsGetMetric">Get Count</h3>
     <div class="bs-callout bs-callout-default">
         <h4><span class="label label-success">GET</span> http://api.upsert.io/event/count/scope/{start}/{end}/{key}</h4>
         This API method is helpful for getting counts for your scope and optionally your key and optionally within a date range.
@@ -189,7 +214,7 @@
         </tbody>
     </table>
 
-    <h3>Query Key Counts</h3>
+    <h3 id="docsQuery">Query Key Counts</h3>
     <div class="bs-callout bs-callout-default">
         <h4><span class="label label-success">GET</span> http://api.upsert.io/event/query/{operator}/{operand}</h4>
         This API method is helpful for performing query operations. Initially supports retrieval of keys by day matching your operator.

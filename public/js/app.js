@@ -5,3 +5,8 @@ function ConfirmDelete() {
     else
         return false;
 }
+
+$('body').scrollspy({
+    target: '.bs-docs-sidebar',
+    offset: 40
+});
