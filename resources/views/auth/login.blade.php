@@ -2,6 +2,10 @@
 
 @section('content')
 
+            <h1>Login</h1>
+
+            <p>Login to manage your apps and create API Tokens.</p>
+
 			<div class="panel panel-default">
 				<div class="panel-heading">Login</div>
 				<div class="panel-body">
