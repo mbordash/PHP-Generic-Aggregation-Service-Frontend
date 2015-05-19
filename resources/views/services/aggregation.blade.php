@@ -17,6 +17,12 @@
                     <li><a href="#docsQuery">Query Counts</a></li>
                 </ul>
             </li>
+            <li>
+                <a href="#sampleCode">Sample Code</a>
+            </li>
+            <li>
+                <a href="#sdks">SDKs</a>
+            </li>
         </ul>
     </nav>
 
@@ -249,5 +255,31 @@
         </tbody>
     </table>
 
+    <h3 id="sampleCode">Sample Code</h3>
+    Here's some sample code to get you started.
+
+    <div role="tabpanel">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#php" aria-controls="php" role="tab" data-toggle="tab">PHP</a></li>
+            <li role="presentation"><a href="#java" aria-controls="java" role="tab" data-toggle="tab">Java</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="php">
+                <script src="https://gist.github.com/mbordash/8fd0dbe6323ad4c29735.js"></script>
+
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="java">java coming soon!</div>
+        </div>
+
+    </div>
+
+
+    <h3 id="sdks">SDKs</h3>
+    Coming Soon!
 
 @endsection
