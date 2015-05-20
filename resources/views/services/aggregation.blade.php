@@ -21,6 +21,9 @@
                 <a href="#sampleCode">Sample Code</a>
             </li>
             <li>
+                <a href="#sdks">Google Charts</a>
+            </li>
+            <li>
                 <a href="#sdks">SDKs</a>
             </li>
         </ul>
@@ -136,7 +139,7 @@
                 <th>scope</th>
                 <td>Yes</td>
                 <td>string</td>
-                <td>A short descriptive name for grouping your metrics.
+                <td>A short descriptive name for grouping your keys.
                     For example, if you're tracking listens for songs, your scope might be "listens",
                     whereas your key might be the song's ID or name.
                 </td>
@@ -220,11 +223,11 @@
         </tbody>
     </table>
 
-    <h3 id="docsQuery">Query Key Counts</h3>
+    <h3 id="docsQuery">Get List by Query</h3>
     <div class="bs-callout bs-callout-default">
-        <h4><span class="label label-success">GET</span> http://api.upsert.io/event/query/{operator}/{operand}</h4>
-        This API method is helpful for performing query operations. Initially supports retrieval of keys by day matching your operator.
-        For example: "get a list of all keys by day where the count value is greater than 1000".
+        <h4><span class="label label-success">GET</span> http://api.upsert.io/event/query2/{inputOperator}/{inputOperand}/{scope}/{key}/{group_by}</h4>
+        This API method is helpful for performing query operations. You can get a list of your gets where the count is greater than a number. You can also get
+        a list of total counts grouped by your scope or your key by day.
     </div>
 
     <h4>Parameters</h4>
@@ -251,7 +254,25 @@
                 <td>Integers</td>
                 <td>The count as an integer you'd like to use for your query.</td>
             </tr>
-
+            <tr>
+                <th>scope</th>
+                <td>Yes</td>
+                <td>String</td>
+                <td>The group name for your keys to be used in the query.</td>
+            </tr>
+            <tr>
+                <th>key</th>
+                <td>No</td>
+                <td>String</td>
+                <td>The name of the key to be used in the query.</td>
+            </tr>
+            </tr>
+            <tr>
+                <th>group_by</th>
+                <td>No</td>
+                <td>Boolean</td>
+                <td>Current supports grouping by day. Default is false</td>
+            </tr>
         </tbody>
     </table>
 
@@ -277,6 +298,9 @@
         </div>
 
     </div>
+
+    <h3 id="sdks">Google Charts</h3>
+    Coming Soon!
 
 
     <h3 id="sdks">SDKs</h3>
