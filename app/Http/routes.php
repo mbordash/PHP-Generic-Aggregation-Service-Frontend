@@ -39,3 +39,4 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+Route::get('proxy', 'RequestProxy@index');
