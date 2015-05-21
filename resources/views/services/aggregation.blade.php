@@ -225,9 +225,9 @@
 
     <h3 id="docsQuery">Get List by Query</h3>
     <div class="bs-callout bs-callout-default">
-        <h4><span class="label label-success">GET</span> http://api.upsert.io/event/query2/{inputOperator}/{inputOperand}/{scope}/{key}/{group_by}</h4>
+        <h4><span class="label label-success">GET</span> http://api.upsert.io/event/query2/{operator}/{operand}/{scope}/{key}/{group_by}</h4>
         This API method is helpful for performing query operations. You can get a list of your gets where the count is greater than a number. You can also get
-        a list of total counts grouped by your scope or your key by day.
+        a list of total counts grouped by your scope or your key by day. We use this API to generate daily summary data by scope for the google chart demo below.
     </div>
 
     <h4>Parameters</h4>
@@ -276,7 +276,7 @@
         </tbody>
     </table>
 
-    <h3 id="sampleCode">Sample Code</h3>
+    <h2 id="sampleCode">Sample Code</h2>
     Here's some sample code to get you started.
 
     <div role="tabpanel">
@@ -299,11 +299,78 @@
 
     </div>
 
-    <h3 id="sdks">Google Charts</h3>
-    Coming Soon!
+    <h2 id="sdks">Google Charts</h2>
+    Here's a great example of how you can use Google Charts to generate real-time aggregate reports for data you store at Upsert.io. We'll use the Get List by Query API
+    above.
+
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+        // Load the Visualization API and the piechart package.
+        google.load('visualization', '1.0', {'packages':['corechart']});
+
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.setOnLoadCallback(drawChart);
 
 
-    <h3 id="sdks">SDKs</h3>
+        // Callback that creates and populates a data table,
+        // instantiates the pie chart, passes in the data and
+        // draws it.
+        function drawChart() {
+
+            var metrics_items = [];
+
+            //get chart data
+            $.ajax({
+                url: 'http://www.upsert.io/proxy',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+
+                    var chartData = new google.visualization.DataTable();
+                    chartData.addColumn('date', 'Date');
+                    chartData.addColumn('number', 'Listens');
+
+                    $.each(data.results, function (key, val) {
+
+                        //var t = val.created_on.split(/[- :]/);
+                        //chartData.addRow([new Date(t[0], t[1] - 1, t[2]), parseInt(val.count)]);
+                        chartData.addRow([new Date(val.created_on), parseInt(val.count)]);
+                    });
+
+                    var options = {
+                        title: 'Total Song Listents by Date',
+                        seriesType: "line",
+                        width: 1000,
+                        height: 400,
+                        legend: { position: 'bottom' },
+                        vAxes:[
+                            {title:'Count'} // Axis 1
+                        ]
+                    };
+
+                    var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+                    chart.draw(chartData, options);
+
+                },
+                error: function () {
+                    alert('boo!');
+                }
+            });
+        }
+    </script>
+
+    <div id="chart_div" style="width:400; height:300"></div>
+
+    To render the chart, first we create a server side proxy script to protect our API token.
+    This php script will simply create a get request to the API and pass through the result.
+    <script src="https://gist.github.com/mbordash/86db2d70b78bf07405f3.js"></script>
+
+    Next, we'll use this proxy script when rendering the Google Charts via JavaScript.
+    <script src="https://gist.github.com/mbordash/d102fa8e8511d6a8ebf7.js"></script>
+
+    <h2 id="sdks">SDKs</h2>
     Coming Soon!
 
 @endsection
