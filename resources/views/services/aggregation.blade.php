@@ -251,7 +251,7 @@
             <tr>
                 <th>operand</th>
                 <td>Yes</td>
-                <td>Integers</td>
+                <td>Integer</td>
                 <td>The count as an integer you'd like to use for your query.</td>
             </tr>
             <tr>
@@ -272,6 +272,12 @@
                 <td>No</td>
                 <td>Boolean</td>
                 <td>Current supports grouping by day. Default is false</td>
+            </tr>
+            <tr>
+                <th>page</th>
+                <td>No</td>
+                <td>Integer</td>
+                <td>The page of results to retrieve. Limit is 100 documents per request.</td>
             </tr>
         </tbody>
     </table>
