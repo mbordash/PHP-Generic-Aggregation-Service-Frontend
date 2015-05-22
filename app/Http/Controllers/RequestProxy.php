@@ -24,7 +24,7 @@ class RequestProxy extends Controller {
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-        curl_setopt($ch, CURLOPT_URL, 'http://api.upsert.io/event/query/gte/0/listens?key=&group_by=true');
+        curl_setopt($ch, CURLOPT_URL, 'http://api.upsert.io/event/query/gte/0/listens?group_by=true');
 
         $server_output = curl_exec ($ch);
         curl_close ($ch);

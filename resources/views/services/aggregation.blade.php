@@ -76,7 +76,7 @@
 
     <h3 id="docsIncDecMetric">Increment/Decrement Metric</h3>
     <div class="bs-callout bs-callout-default">
-        <h4><span class="label label-warning">PUT</span> http://api.upsert.io/event/{action}/{scope}/{key}</h4>
+        <h4><span class="label label-warning">PUT</span> http://api.upsert.io/event</h4>
         This API method is helpful for keeping track of metric counts in real-time.
     </div>
 
@@ -120,7 +120,7 @@
 
     <h3 id="docsSetMetric">Set Metric</h3>
     <div class="bs-callout bs-callout-default">
-        <h4><span class="label label-warning">PUT</span> http://api.upsert.io/event/set/{scope}/{key}/{val}/{date}</h4>
+        <h4><span class="label label-warning">PUT</span> http://api.upsert.io/event/set</h4>
         This API method is helpful for loading counts for keys for past days or for storing counts as a result of a pivot.
     </div>
 
@@ -171,7 +171,7 @@
 
     <h3 id="docsGetMetric">Get Count</h3>
     <div class="bs-callout bs-callout-default">
-        <h4><span class="label label-success">GET</span> http://api.upsert.io/event/count/scope/{start}/{end}/{key}</h4>
+        <h4><span class="label label-success">GET</span> http://api.upsert.io/event/count</h4>
         This API method is helpful for getting counts for your scope and optionally your key and optionally within a date range.
     </div>
 
@@ -225,7 +225,7 @@
 
     <h3 id="docsQuery">Get List by Query</h3>
     <div class="bs-callout bs-callout-default">
-        <h4><span class="label label-success">GET</span> http://api.upsert.io/event/query2/{operator}/{operand}/{scope}/{key}/{group_by}</h4>
+        <h4><span class="label label-success">GET</span> http://api.upsert.io/event/query</h4>
         This API method is helpful for performing query operations. You can get a list of your gets where the count is greater than a number. You can also get
         a list of total counts grouped by your scope or your key by day. We use this API to generate daily summary data by scope for the google chart demo below.
     </div>
@@ -280,7 +280,6 @@
     Here's some sample code to get you started.
 
     <div role="tabpanel">
-
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#php" aria-controls="php" role="tab" data-toggle="tab">PHP</a></li>
@@ -296,7 +295,6 @@
             </div>
             <div role="tabpanel" class="tab-pane" id="java">java coming soon!</div>
         </div>
-
     </div>
 
     <h2 id="sdks">Google Charts</h2>
@@ -340,7 +338,7 @@
                     });
 
                     var options = {
-                        title: 'Total Song Listents by Date',
+                        title: 'Total Song Listens by Date',
                         seriesType: "line",
                         width: 1000,
                         height: 400,
@@ -365,10 +363,39 @@
 
     To render the chart, first we create a server side proxy script to protect our API token.
     This php script will simply create a get request to the API and pass through the result.
-    <script src="https://gist.github.com/mbordash/86db2d70b78bf07405f3.js"></script>
+
+    <div role="tabpanel">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#gc_php" aria-controls="php" role="tab" data-toggle="tab">PHP</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="#gc_php">
+                <script src="https://gist.github.com/mbordash/86db2d70b78bf07405f3.js"></script>
+
+
+            </div>
+        </div>
+    </div>
+
 
     Next, we'll use this proxy script when rendering the Google Charts via JavaScript.
-    <script src="https://gist.github.com/mbordash/d102fa8e8511d6a8ebf7.js"></script>
+
+    <div role="tabpanel">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#gc_javascript" aria-controls="php" role="tab" data-toggle="tab">JavaScript</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="gc_javascript">
+                <script src="https://gist.github.com/mbordash/d102fa8e8511d6a8ebf7.js"></script>
+            </div>
+        </div>
+    </div>
 
     <h2 id="sdks">SDKs</h2>
     Coming Soon!
