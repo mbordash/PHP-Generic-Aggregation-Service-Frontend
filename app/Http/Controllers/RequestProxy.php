@@ -17,14 +17,14 @@ class RequestProxy extends Controller {
 
         $headers = array(
             'Authorization: Bearer BFB5588C-7591-4555-BE83-7BDB0A4AB619'
-            //'Authorization: Bearer 6742F491-5BA6-409C-8A45-152EE78B117D'
+            // dev // 'Authorization: Bearer 6742F491-5BA6-409C-8A45-152EE78B117D'
         );
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-        curl_setopt($ch, CURLOPT_URL, 'http://api.upsert.io/event/query/gte/0/listens?group_by=true');
+        curl_setopt($ch, CURLOPT_URL, 'http://api.upsert.io/event/query?operator=gte&operand=0&scope=listens&group_by=true');
 
         $server_output = curl_exec ($ch);
         curl_close ($ch);
