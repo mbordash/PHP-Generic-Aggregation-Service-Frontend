@@ -76,7 +76,7 @@
 
     <h3 id="docsIncDecMetric">Increment/Decrement Metric</h3>
     <div class="bs-callout bs-callout-default">
-        <h4><span class="label label-warning">PUT</span> http://api.upsert.io/event</h4>
+        <h4><span class="label label-warning">PUT</span> http://api.upsert.io/event/put</h4>
         This API method is helpful for keeping track of metric counts in real-time.
     </div>
 
