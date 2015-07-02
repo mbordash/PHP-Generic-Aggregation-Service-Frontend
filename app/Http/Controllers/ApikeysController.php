@@ -88,10 +88,10 @@ class ApikeysController extends Controller {
 	{
         //$apikey = Apikey::where( 'users_id', 'all', array($request->user()->id) )->get();
         $now = time();
-        $dateDiff = $now - $apikey->created_at;
+        $dateDiff = $apikey->created_at->diffForHumans(\Carbon\Carbon::now());
         $daysSince = floor($dateDiff/60*60*24);
         if ( $daysSince >= 1 ) {
-            $avgReqPerDay = $apikey->request_count / $daysSince;
+            $avgReqPerDay = round($apikey->request_count / $daysSince);
         } else {
             $avgReqPerDay = 0;
         }
