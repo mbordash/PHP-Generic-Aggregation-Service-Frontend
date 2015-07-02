@@ -91,12 +91,14 @@ class ApikeysController extends Controller {
         $dateDiff = $apikey->created_at->diffForHumans(\Carbon\Carbon::now());
         $daysSince = floor($dateDiff/60*60*24);
         if ( $daysSince >= 1 ) {
-            $avgReqPerDay = round($apikey->request_count / $daysSince);
+            $avgReqPerDay = $apikey->request_count / $daysSince;
         } else {
             $avgReqPerDay = 0;
         }
 
-        $apikey->requests_per_day = $avgReqPerDay;
+        // format results
+        $apikey->request_limit_day = number_format($apikey->request_limit_day);
+        $apikey->requests_per_day = number_format(round($avgReqPerDay));
 
 		return view('apikeys.show', compact('apikey'));
 	}
