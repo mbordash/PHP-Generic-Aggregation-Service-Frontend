@@ -68,7 +68,7 @@
 
         <h5>For example (curl)</h5>
         <code>
-            curl --header "authorization: Bearer {YOUR_SECURE_TOKEN}" --include --request PUT "http://api.upsert.io/event/inc/listens/caravan"
+            curl --header "authorization: Bearer {YOUR_SECURE_TOKEN}" --include --request PUT "http://api.upsert.io/event/put?action=inc&scope=listens&key=caravan"
         </code>
     </div>
 

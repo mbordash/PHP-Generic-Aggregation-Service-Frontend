@@ -87,6 +87,16 @@ class ApikeysController extends Controller {
 	public function show(Apikey $apikey, Request $request)
 	{
         //$apikey = Apikey::where( 'users_id', 'all', array($request->user()->id) )->get();
+        $now = time();
+        $dateDiff = $now - $apikey->created_at;
+        $daysSince = floor($dateDiff/60*60*24);
+        if ( $daysSince >= 1 ) {
+            $avgReqPerDay = $apikey->request_count / $daysSince;
+        } else {
+            $avgReqPerDay = 0;
+        }
+
+        $apikey->requests_per_day = $avgReqPerDay;
 
 		return view('apikeys.show', compact('apikey'));
 	}
