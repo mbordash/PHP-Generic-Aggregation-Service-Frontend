@@ -28,7 +28,7 @@
 
                 <dl class="dl-horizontal">
                     <dt>Total Requests</dt>
-                    <dd>{{ $apikey->request_count }}</dd>
+                    <dd>{{ $apikey->request_count }} ({{ $apikey->requests_per_day }} avg/day)</dd>
                 </dl>
 
                 <dl class="dl-horizontal">
@@ -36,6 +36,11 @@
                     <dd>{{ $apikey->created_at }}</dd>
                 </dl>
             @endif
+
+            <p>
+                {!! link_to_route('apikeys.edit', 'Edit', array($apikey->slug), array('class' => 'btn btn-info btn-xs')) !!}
+                {!! Form::submit('Delete', array('class' => 'btn btn-danger btn-xs')) !!}
+            </p>
 
             <p>
                 {!! link_to_route('apikeys.index', 'Back to API Keys', null , array('class' => 'btn btn-info')) !!}
