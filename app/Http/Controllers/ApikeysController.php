@@ -97,6 +97,7 @@ class ApikeysController extends Controller {
         }
 
         // format results
+        $apikey->request_count = number_format($apikey->request_count);
         $apikey->request_limit_day = number_format($apikey->request_limit_day);
         $apikey->requests_per_day = number_format(round($avgReqPerDay));
 
