@@ -27,6 +27,13 @@
                 </dl>
 
                 <dl class="dl-horizontal">
+                    <dt>Max Burst Requests per Second</dt>
+                    <dd>{{ $apikey->request_burst_sec }}</dd>
+                </dl>
+
+                $maxBurstReqSec
+
+                <dl class="dl-horizontal">
                     <dt>Total Requests</dt>
                     <dd>{{ $apikey->request_count }} ({{ $apikey->requests_per_day }} avg/day)</dd>
                 </dl>
