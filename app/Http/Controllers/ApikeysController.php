@@ -70,7 +70,8 @@ class ApikeysController extends Controller {
         $input['users_id'] = $request->user()->id;
         $input['api_key'] = Helper::makeGuid();
         $input['approved'] = true;
-        $input['request_limit_day'] = 5000;
+        $input['request_limit_day'] = 100000;
+        $input['request_burst_sec'] = 5;
         $input['request_count'] = 0;
         Apikey::create( $input );
 
@@ -100,6 +101,7 @@ class ApikeysController extends Controller {
         $apikey->request_count = number_format($apikey->request_count);
         $apikey->request_limit_day = number_format($apikey->request_limit_day);
         $apikey->requests_per_day = number_format(round($avgReqPerDay));
+        $apikey->requests_burst_sec = number_format(round($maxBurstReqSec));
 
 		return view('apikeys.show', compact('apikey'));
 	}

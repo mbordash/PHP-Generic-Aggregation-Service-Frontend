@@ -23,9 +23,6 @@
             <li>
                 <a href="#sdks">Google Charts</a>
             </li>
-            <li>
-                <a href="#sdks">SDKs</a>
-            </li>
         </ul>
     </nav>
 
@@ -48,7 +45,7 @@
                 or storing summary results based on a pivot. Our aggregation service was created with these use cases in mind.
             </p>
             <p>
-                Free users may create up to 5 API keys, are limited to 5000 requests per day per key, with precision to the day.
+                Free users may create up to 5 API keys, are limited to 100,000 requests per day per key (max burst of 5 requests/second), with precision to the day.
                 Upgrades are available if you need to increase your daily requests limit or if you need aggregation precision down to the hour or minute.
             </p>
             <!--<p>
@@ -403,7 +400,5 @@
         </div>
     </div>
 
-    <h2 id="sdks">SDKs</h2>
-    Coming Soon!
 
 @endsection
