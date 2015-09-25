@@ -11,7 +11,21 @@
 
                 {!! Form::model($apikey, ['method' => 'PATCH', 'route' => ['apikeys.update', $apikey->slug]]) !!}
 
-                @include('apikeys/partials/_form', ['submit_text' => 'Save App'])
+                <div class="form-group">
+                    {!! Form::label('app_name', 'Application Name:') !!}
+                    {!! Form::text('app_name') !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('slug', 'Short Name') !!}
+                    {!! Form::text('slug', null, ['disabled']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('app_desc', 'Application Description:') !!}
+                    {!! Form::textarea('app_desc') !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::submit('Save App', ['class'=>'btn primary']) !!}
+                </div>
 
                 {!! Form::close() !!}
 

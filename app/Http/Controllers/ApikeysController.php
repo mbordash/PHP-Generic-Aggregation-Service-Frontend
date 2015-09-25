@@ -16,9 +16,10 @@ class ApikeysController extends Controller {
         $this->middleware('auth');
     }
 
+
     protected $rules = [
         'app_name' => ['required', 'min:3'],
-        'slug' => ['required', 'unique:apikeys', 'alpha_num'],
+        'slug' => ['required', 'unique:apikeys', 'alpha_num']
     ];
 
 	/**
