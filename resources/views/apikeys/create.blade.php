@@ -11,7 +11,21 @@
 
             {!! Form::model(new App\Apikey, ['route' => ['apikeys.store']]) !!}
 
-            @include('apikeys/partials/_form', ['submit_text' => 'Create App & Token'])
+            <div class="form-group">
+                {!! Form::label('app_name', 'Application Name:') !!}
+                {!! Form::text('app_name') !!}
+            </div>
+            <div class="form-group">
+                {!! Form::label('slug', 'Short Name (no spaces):') !!}
+                {!! Form::text('slug') !!}
+            </div>
+            <div class="form-group">
+                {!! Form::label('app_desc', 'Application Description:') !!}
+                {!! Form::textarea('app_desc') !!}
+            </div>
+            <div class="form-group">
+                {!! Form::submit('Create App & Token', ['class'=>'btn primary']) !!}
+            </div>
 
             {!! Form::close() !!}
 
