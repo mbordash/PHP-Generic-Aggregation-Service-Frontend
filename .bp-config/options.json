@@ -1,0 +1,6 @@
+{
+     "PHP_VERSION": "{PHP_56_LATEST}",
+     "COMPOSER_VENDOR_DIR": "htdocs/vendor",
+     "WEBDIR": "htdocs/public",
+     "PHP_EXTENSIONS": [ "apc", "mongo", "bz2", "zlib", "openssl", "fpm", "tokenizer", "curl", "mcrypt", "mbstring", "pdo"]
+}
