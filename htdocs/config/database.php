@@ -85,7 +85,9 @@ return [
 		],
 		'mongodb' => [
     			'driver'   => 'mongodb',
-    			'host'     => array('candidate.53.mongolayer.com:10028','candidate.52.mongolayer.com:10429'),
+				'host'     => array('candidate.52.mongolayer.com:10429','candidate.53.mongolayer.com:10028'),
+				//'host'     => array('54.224.53.146:10028','54.226.134.213:10429'),
+				//'host'     => array('candidate.53.mongolayer.com:10028'),
     			//'port'     => 10028,
                 //'host'     => 'candidate.53.mongolayer.com',
                 //'port'     => 10028,
@@ -93,11 +95,16 @@ return [
     			'password' => '19283747181289',
     			'database' => 'upsert',
     			'options' => array(
-					'replicaSet' => 'set-560884b1cf153c0344001188',
-					'readPreference' => 'secondaryPreferred'
+					'replicaSet' => 'set-560884b1cf153c0344001188'
+				//	'readPreference' => 'secondaryPreferred'
         		//	'db' => 'admin' // sets the authentication database required by mongo 3
 				)
 
+		],
+		'mongodbDev' => [
+			'driver'   => 'mongodb',
+			'host'     => 'localhost',
+			'database' => 'upsert'
 		],
 
 	],
@@ -131,9 +138,11 @@ return [
 		'cluster' => false,
 
 		'default' => [
-			'host'     => '127.0.0.1',
-			'port'     => 6379,
+			'host'     => 'aws-us-east-1-portal.8.dblayer.com',
+			//'host'     => '54.85.73.172',
+			'port'     => 10467,
 			'database' => 0,
+			'password' => 'XKILQLDHPQMPJDPY'
 		],
 
 	],
