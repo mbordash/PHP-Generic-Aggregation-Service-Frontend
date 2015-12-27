@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'default' => 'mongodb',
+	'default' => 'mongodbPrd',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -83,7 +83,7 @@ return [
 			'password' => env('DB_PASSWORD', ''),
 			'prefix'   => '',
 		],
-		'mongodb' => [
+		'mongodbPrd' => [
     			'driver'   => 'mongodb',
 				'host'     => array('candidate.52.mongolayer.com:10429','candidate.53.mongolayer.com:10028'),
 				//'host'     => array('54.224.53.146:10028','54.226.134.213:10429'),
@@ -104,6 +104,12 @@ return [
 		'mongodbDev' => [
 			'driver'   => 'mongodb',
 			'host'     => 'localhost',
+<<<<<<< Updated upstream
+=======
+			//'port'     => 10028,
+			//'host'     => 'candidate.53.mongolayer.com',
+			//'port'     => 10028,
+>>>>>>> Stashed changes
 			'database' => 'upsert'
 		],
 
