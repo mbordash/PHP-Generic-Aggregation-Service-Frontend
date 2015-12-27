@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <h1>Contact Upsert.io</h1>
+    <h1>Contact SquareTable.io</h1>
 
     <p>Need help or have a question? Please let us know and we'll get back to you asap.</p>
 

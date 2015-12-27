@@ -1,16 +1,17 @@
-FROM ubuntu:14.04
+FROM ubuntu
 
 MAINTAINER Michael Bordash <michael@internetdj.com>
 
-ENV MONGO_PHP_VERSION 1.6.11
+ENV MONGO_PHP_VERSION 1.6.12
 
 # Copy your site to your public url
-COPY ./ /var/www/www.upsert.io
+COPY ./ /var/www/www.squaretable.io
 
 # Install apache, PHP and a variety of dependencies
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
     apt-get -yq install \
+        wget \
         curl \
         git \
         make \
@@ -49,13 +50,24 @@ ENV APACHE_LOG_DIR /var/log/apache2
 ENV APACHE_LOCK_DIR /var/lock/apache2
 ENV APACHE_PID_FILE /var/run/apache2.pid
 
-
 # Add your custom Apache config for your site
 ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 
 VOLUME ["/var/log/apache2"]
 
+# Install new relic php agent
+# RUN (wget -O - https://download.newrelic.com/548C16BF.gpg | apt-key add - && \
+#  sh -c 'echo "deb http://apt.newrelic.com/debian/ newrelic non-free" > /etc/apt/sources.list.d/newrelic.list' && \
+#  apt-get update && \
+#  DEBIAN_FRONTEND=noninteractive apt-get install -y newrelic-php5 && \
+#  apt-get clean)
+
+#RUN sudo newrelic-install install
+
+#RUN echo newrelic-php5 newrelic-php5/application-name string "www.squaretable.io" | debconf-set-selections
+#RUN echo newrelic-php5 newrelic-php5/license-key string "7f104c37fd196f99d98a73cc86c1e720e084643b"
+
 EXPOSE 80
 
 CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
-
+# CMD ["/etc/init.d/newrelic-sysmond start"]
