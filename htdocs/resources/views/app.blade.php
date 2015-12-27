@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Upsert.io is a trademark of Dashboard Media, LLC. All rights reserved -->
+    <!-- SquareTable.io is a trademark of Dashboard Media, LLC. All rights reserved -->
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Upsert.io</title>
+	<title>SquareTable.io</title>
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
@@ -30,7 +30,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">Upsert.io</a>
+				<a class="navbar-brand" href="/">SquareTable.io</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

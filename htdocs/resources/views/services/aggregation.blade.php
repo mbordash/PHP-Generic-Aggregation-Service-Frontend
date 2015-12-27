@@ -51,7 +51,7 @@
             <!--<p>
                 Our service goals are 100% uptime with 200ms API request response.
                 Paid subscribers are automatically eligible for 99.99% monthly uptime guarantees with 50% refund if we fall short of this goal.
-                For SLA purposes, uptime monitoring is provided by Upsert.io.
+                For SLA purposes, uptime monitoring is provided by SquareTable.io.
             </p> -->
         </div>
     </div>
@@ -65,7 +65,7 @@
 
         <h5>For example (curl)</h5>
         <code>
-            curl --header "content-length: 0" --header "authorization: Bearer {YOUR_SECURE_TOKEN}" --include --request PUT "http://api.upsert.io/2.0/event/put?action=inc&scope=listens&key=caravan"
+            curl --header "content-length: 0" --header "authorization: Bearer {YOUR_SECURE_TOKEN}" --include --request PUT "http://api.squaretable.io/2.0/event/put?action=inc&scope=listens&key=caravan"
         </code>
     </div>
 
@@ -73,7 +73,7 @@
 
     <h3 id="docsIncDecMetric">Increment/Decrement Metric</h3>
     <div class="bs-callout bs-callout-default">
-        <h4><span class="label label-warning">PUT</span> http://api.upsert.io/2.0/event/put</h4>
+        <h4><span class="label label-warning">PUT</span> http://api.squaretable.io/2.0/event/put</h4>
         This API method is helpful for keeping track of metric counts in real-time.
     </div>
 
@@ -117,7 +117,7 @@
 
     <h3 id="docsSetMetric">Set Metric</h3>
     <div class="bs-callout bs-callout-default">
-        <h4><span class="label label-warning">PUT</span> http://api.upsert.io/2.0/event/set</h4>
+        <h4><span class="label label-warning">PUT</span> http://api.squaretable.io/2.0/event/set</h4>
         This API method is helpful for loading counts for keys for past days or for storing counts as a result of a pivot.
     </div>
 
@@ -168,7 +168,7 @@
 
     <h3 id="docsGetMetric">Get Count</h3>
     <div class="bs-callout bs-callout-default">
-        <h4><span class="label label-success">GET</span> http://api.upsert.io/2.0/event/count</h4>
+        <h4><span class="label label-success">GET</span> http://api.squaretable.io/2.0/event/count</h4>
         This API method is helpful for getting counts for your scope and optionally your key and optionally within a date range.
     </div>
 
@@ -222,7 +222,7 @@
 
     <h3 id="docsQuery">Get List by Query</h3>
     <div class="bs-callout bs-callout-default">
-        <h4><span class="label label-success">GET</span> http://api.upsert.io/2.0/event/query</h4>
+        <h4><span class="label label-success">GET</span> http://api.squaretable.io/2.0/event/query</h4>
         This API method is helpful for performing query operations. You can get a list of your keys where the count is greater than a number. You can also get
         a list of total counts grouped by your scope or your key by day. We use this API to generate daily summary data by scope for the google chart demo below.
     </div>
@@ -301,7 +301,7 @@
     </div>
 
     <h2 id="sdks">Google Charts</h2>
-    Here's a great example of how you can use Google Charts to generate real-time aggregate reports for data you store at Upsert.io. We'll use the Get List by Query API
+    Here's a great example of how you can use Google Charts to generate real-time aggregate reports for data you store at SquareTable.io. We'll use the Get List by Query API
     above.
 
     <!--Load the AJAX API-->

@@ -13,7 +13,7 @@ return [
 	|
 	*/
 
-	'debug' => env('APP_DEBUG', true),
+	'debug' => env('APP_DEBUG', false),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url' => 'http://www.upsert.io',
+	'url' => 'http://www.squaretable.io',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -146,8 +146,7 @@ return [
 		'App\Providers\BusServiceProvider',
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
-		'App\Providers\RouteServiceProvider',
-
+		'App\Providers\RouteServiceProvider'
 	],
 
 	/*
