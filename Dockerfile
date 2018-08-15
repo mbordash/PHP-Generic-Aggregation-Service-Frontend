@@ -65,7 +65,7 @@ VOLUME ["/var/log/apache2"]
 #RUN sudo newrelic-install install
 
 #RUN echo newrelic-php5 newrelic-php5/application-name string "www.squaretable.io" | debconf-set-selections
-#RUN echo newrelic-php5 newrelic-php5/license-key string "7f104c37fd196f99d98a73cc86c1e720e084643b"
+#RUN echo newrelic-php5 newrelic-php5/license-key string ""
 
 EXPOSE 80
 
